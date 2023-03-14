@@ -6,17 +6,17 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from '@remix-run/react';
+} from '@remix-run/react'
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8'
   , title: 'Site web de Tarik Amar'
   , viewport: 'width=device-width,initial-scale=1'
-});
+})
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <Meta />
         <Links />
@@ -28,5 +28,5 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
-  );
+  )
 }
