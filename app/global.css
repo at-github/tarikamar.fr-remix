@@ -1,15 +1,135 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab');
+
+pre {
+  white-space: break-spaces;
+  text-align: left;
+  font-size: 12px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: #EEE;
+  color: #111;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px 60px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+body > * {
+  flex: 1;
+}
+
+p {
+  padding: 5px 10px;
+  line-height: 2rem;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0 0 0 30px;
+  line-height: 2rem;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px 0 30px;
+  font-size: 11vw;
+}
+
+h2 {
+  margin: 80px 0 10px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: normal;
+  font-size: 5vw;
+  color: #333;
+}
+
+h3 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 4vw;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.big-row {
+  min-height: 100vh;
+  max-width: 90vw;
+  display: flex;
+  align-items: flex-start;
+  scroll-snap-align: start;
+}
+
+.big-row > * {
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid black;
+}
+
+a:hover {
+  border-bottom: 2px solid gray;
+}
+
+button, .button {
+  background-color: #333;
+  color: #EEE;
+  padding: 20px 40px;
+}
+
+button:hover, .button:hover {
+  background-color: #404040;
+  color: #FFF;
+}
+
+button:active,
+.button:active {
+  background-color: #4d4d4d;
+  color: #DDD;
+}
+
+button:disabled,
+.button:disabled {
+  background-color: #555;
+  color: #DDD;
+  cursor: default;
 }
 
 .is-type-video {
@@ -24,4 +144,174 @@ code {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  /** MAIN TITLE **/
+  #soon {
+    font-size: 14rem;
+    line-height: 12rem;
+  }
+
+  #my-services {
+    font-size: 4.3rem;
+    line-height: 4rem;
+  }
+
+  #your-disposal {
+    font-size: 5.6rem;
+    line-height: 6rem;;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+}
+
+/** IPAD PRO portrait **/
+@media (max-width: 1024px) {
+  .ReactQueryDevtools {
+    display: none;
+  }
+
+  button:hover, .button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .about-me h1 {
+    background-position: 82% 0;
+  }
+
+  h1 {
+    font-size: 9vw;
+  }
+
+  /** MAIN TITLE **/
+  #soon {
+    font-size: 20vw;
+    line-height: 17vw;;
+  }
+
+  #my-services {
+    font-size: 6.1vw;
+    line-height: 6vw;;
+  }
+
+  #your-disposal {
+    font-size: 8vw;
+    line-height: 8vw;;
+  }
+
+  h2 {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 834px) {
+  .wp-block-columns {
+    column-gap: 20px;
+    padding: 0 10px;
+  }
+}
+
+/** IPAD AIR portrait **/
+@media (max-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+
+  .wp-block-column > * {
+    flex: 1;
+  }
+}
+
+/** NEXUS 7 **/
+@media (max-width: 601px) {
+  body {
+    font-size: 20px;
+  }
+
+  h1 {
+    margin: 50px 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /** WORDPRESS COLUMNS **/
+  .wp-block-columns {
+    flex-direction: column;
+  }
+
+  .wp-block-columns.question-answer .wp-block-column:last-child {
+    text-align: right;
+  }
+}
+
+@media (max-width: 376px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    margin: 50px 0;
+  }
+
+  h2 {
+    font-size: 7.7vw;
+    margin: 20px 0 10px;
+  }
+}
+
+/** FAIRPHONE 3+ **/
+@media (max-width: 361px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    margin: 25px 0;
+  }
+
+  h2 {
+    margin: 20px 0 10px;
+  }
+
+  p {
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  /** WORDPRESS COLUMNS **/
+  .wp-block-columns {
+    padding: 0;
+  }
+
+  /** SOLUTIONS **/
+  .solution-design {
+    background-position: 0 70%;
+  }
+
+  .solution-site {
+    background-position: 0 85%;
+  }
+
+  .solution-tools {
+    background-position: 0 80%;
+  }
+
+  /** ABOUT ME **/
+  .about-me h1 {
+    background-position: 84% 0;
+  }
 }
