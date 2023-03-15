@@ -1,3 +1,24 @@
-export default function Services() {
-  return <>WIP Services</>
+function Contact(props: {messagePlaceholder: string}) {
+  return <>'WIP contact'</>
+}
+
+export default function Services(props: { page: string }) {
+  return (
+    <div className="content services">
+      <div
+        className="editorial"
+        dangerouslySetInnerHTML={{
+          __html: props.page
+        }}
+      />
+      <div className="big-row contact">
+        <div>
+          <h1>Intéressé ?</h1>
+          <Contact
+            messagePlaceholder="Donnez moi une idée de l’aide dont vous avez besoin"
+          />
+        </div>
+      </div>
+    </div>
+  )
 }
