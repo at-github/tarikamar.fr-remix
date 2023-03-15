@@ -2,6 +2,12 @@ import { useLoaderData } from 'react-router'
 import Services from '~/features/services'
 import myFetch from '~/utils/myFetch'
 
+import styles from '~/features/services/Services.css';
+
+export function links() {
+  return [{ rel: 'stylesheet', href: styles }];
+}
+
 interface APIServicesResponse {
   content: {
     rendered: string
