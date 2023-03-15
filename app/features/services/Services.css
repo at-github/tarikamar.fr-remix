@@ -39,16 +39,16 @@ h1#title-main span {
 }
 
 .solution-design {
-  background-image: url('/public/img/symbol-design.png');
+  background-image: url('/img/symbol-design.png');
 }
 
 .solution-site {
-  background-image: url('/public/img/symbol-site.png');
+  background-image: url('/img/symbol-site.png');
   background-size: 90px;
 }
 
 .solution-tools {
-  background-image: url('/public/img/symbol-tools.png');
+  background-image: url('/img/symbol-tools.png');
   background-size: 95px;
 }
 
@@ -56,7 +56,7 @@ h1#title-main span {
 .about-me .hello {
   display: block;
   background-repeat: no-repeat;
-  background-image: url('/public/img/hello.png');
+  background-image: url('/img/hello.png');
   background-position: 90% 0;
   background-size: contain;
 }
