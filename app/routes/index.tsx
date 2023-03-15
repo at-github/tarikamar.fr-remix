@@ -1,12 +1,19 @@
 import { useLoaderData } from 'react-router'
 import Services from '~/features/services'
 import myFetch from '~/utils/myFetch'
+import type { MetaFunction } from '@remix-run/node'
+import build from '~/utils/buildMeta'
 
 import styles from '~/features/services/Services.css';
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [{ rel: 'stylesheet', href: styles }]
 }
+
+export const meta: MetaFunction = (data) =>
+  build({
+    title: data.data.title.rendered
+  })
 
 interface APIServicesResponse {
   content: {
