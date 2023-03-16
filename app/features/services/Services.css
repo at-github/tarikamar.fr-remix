@@ -5,6 +5,11 @@
   line-height: 30px;
 }
 
+p {
+  margin: 20px 0;
+  padding: 5px 0;
+}
+
 /** MAIN TITLE **/
 
 h1#title-main span {
@@ -25,7 +30,7 @@ h1#title-main span {
 .wp-block-columns {
   display: flex;
   column-gap: 50px;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .wp-block-column {

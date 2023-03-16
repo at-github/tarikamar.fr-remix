@@ -1,0 +1,52 @@
+.CTA {
+  background-color: #333;
+  color: #EEE!important;
+  padding: 20px 40px!important;
+  box-shadow: rgb(0 0 0 / 25%) 10px 10px 10px 0px;
+  transition: box-shadow 100ms ease-out;
+  box-sizing: content-box;
+  white-space: nowrap;
+  border-bottom: none;
+}
+
+#menu .CTA {
+  box-sizing: border-box;
+  box-shadow: rgb(0 0 0 / 25%) 0px 10px 10px 0px;
+}
+
+#menu .CTA:hover,
+#menu .CTA.active {
+  border-bottom: none;
+}
+
+.CTA:hover {
+  box-shadow: rgb(0 0 0 / 25%) 2px 2px 3px 0px;
+  background-color: #404040;
+  color: #FFF;
+}
+
+.CTA:active {
+  background-color: #4d4d4d;
+  margin: 6px 5px 5px 6px;
+  padding: 18px 38px;
+  color: #DDD;
+}
+
+.CTA:disabled {
+  background-color: #555;
+  color: #DDD;
+  box-shadow: rgb(0 0 0 / 25%) 2px 2px 3px 0px;
+  cursor: default;
+}
+
+.CTA #loading {
+  top: 23px;
+  right: 10px;
+}
+
+/** NEXUS 7 **/
+@media (max-width: 601px) {
+  .CTA {
+    padding: 20px 15px!important;
+  }
+}

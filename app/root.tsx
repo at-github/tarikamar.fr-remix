@@ -7,10 +7,17 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
+import Menu from '~/components/Menu'
 import styles from '~/global.css'
+import stylesMenu from '~/components/Menu/Menu.css'
+import stylesCTA from '~/components/CTA/CTA.css'
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }]
+  return [
+    { rel: 'stylesheet', href: styles }
+    , { rel: 'stylesheet', href: stylesMenu }
+    , { rel: 'stylesheet', href: stylesCTA }
+  ]
 }
 
 export const meta: MetaFunction = () => ({
@@ -27,7 +34,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <div id="container">
+          <Menu />
+          <Outlet />
+        </div>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
