@@ -9,6 +9,9 @@ import styles from '~/features/services/Services.css'
 export function links() {
   return [{ rel: 'stylesheet', href: styles }]
 }
+// TODO once /services & / is same add this:
+// <link rel="canonical" href="https://example.com/dresses/green-dresses" />
+// https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls?hl=fr#rel-canonical-link-method
 
 export const meta: MetaFunction = fromLoader =>  {
   const {data} = fromLoader
@@ -38,6 +41,7 @@ export async function loader() {
 export default function Index() {
   const {page} = useLoaderData() as {page: APIServicesResponse}
 
+  // TODO create utils to extract from wp api response
   return (
     <Services page={ page.content.rendered }/>
   )

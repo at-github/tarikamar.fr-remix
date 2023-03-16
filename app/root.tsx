@@ -8,15 +8,21 @@ import {
   ScrollRestoration,
 } from '@remix-run/react'
 import Menu from '~/components/Menu'
+import Footer from '~/components/Footer'
+import {useRef} from 'react'
+import useIntersectionObserver from '~/hooks/useIntersectionObserver'
+
 import styles from '~/global.css'
 import stylesMenu from '~/components/Menu/Menu.css'
 import stylesCTA from '~/components/CTA/CTA.css'
+import stylesFooter from '~/components/Footer/Footer.css'
 
 export function links() {
   return [
     { rel: 'stylesheet', href: styles }
     , { rel: 'stylesheet', href: stylesMenu }
     , { rel: 'stylesheet', href: stylesCTA }
+    , { rel: 'stylesheet', href: stylesFooter }
   ]
 }
 
@@ -27,6 +33,13 @@ export const meta: MetaFunction = () => ({
 })
 
 export default function App() {
+  const ref = useRef<HTMLDivElement | null>(null)
+  const entry = useIntersectionObserver(ref, {})
+  let menuVisible = true
+
+  if (typeof entry?.isIntersecting !== 'undefined')
+    menuVisible = entry.isIntersecting
+
   return (
     <html lang="fr">
       <head>
@@ -35,8 +48,9 @@ export default function App() {
       </head>
       <body>
         <div id="container">
-          <Menu />
+          <Menu ref={ref}/>
           <Outlet />
+          <Footer scrollTopVisible={!menuVisible}/>
         </div>
 
         <ScrollRestoration />
