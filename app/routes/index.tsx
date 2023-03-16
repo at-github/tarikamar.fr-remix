@@ -4,16 +4,20 @@ import myFetch from '~/utils/myFetch'
 import type { MetaFunction } from '@remix-run/node'
 import build from '~/utils/buildMeta'
 
-import styles from '~/features/services/Services.css';
+import styles from '~/features/services/Services.css'
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }]
 }
 
-export const meta: MetaFunction = (data) =>
-  build({
-    title: data.data.title.rendered
-  })
+export const meta: MetaFunction = fromLoader =>  {
+  const {data} = fromLoader
+
+  return build(
+    {domain: data.metadata.domain, path: fromLoader.location.pathname},
+    { title: data.page.title.rendered }
+  )
+}
 
 interface APIServicesResponse {
   content: {
@@ -22,13 +26,19 @@ interface APIServicesResponse {
 }
 
 export async function loader() {
-  return myFetch('/wp/v2/pages/5')
+  const page = await myFetch('/wp/v2/pages/5')
+  const domain = process.env.REACT_APP_DOMAIN
+
+  return {
+    page
+    , metadata: { domain }
+  }
 }
 
 export default function Index() {
-  const page = useLoaderData() as APIServicesResponse
+  const {page} = useLoaderData() as {page: APIServicesResponse}
 
   return (
-    <Services page={page.content.rendered}/>
+    <Services page={ page.content.rendered }/>
   )
 }
