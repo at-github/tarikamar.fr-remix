@@ -1,0 +1,74 @@
+.form-row {
+  margin: 5px 0;
+}
+
+input, textarea, button, label {
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 1.5rem;
+}
+
+.form-row input,
+.form-row textarea {
+  margin-top: 41px;
+}
+
+textarea {
+  max-width: 80vw;
+}
+
+button {
+  cursor: pointer;
+}
+
+label {
+  display: block;
+}
+
+/** Cant overwrite background on webkit **/
+/** https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill **/
+*:autofill {
+  background-color: white!important;
+}
+
+/** ERRORS **/
+label.error {
+  color: #5c3d3d;
+  display: none;
+  border-left: 5px solid #dd0505;
+  margin-bottom: -41px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+label.error svg {
+  width: 20px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+
+.form-row.edited.not-valid label,
+.form-row.edited.not-valid input,
+.form-row.edited.not-valid textarea {
+  border-left: 5px solid #dd0505;
+  padding-left: 10px;
+}
+
+.form-row.edited.not-valid label.error {
+  display: block;
+}
+
+/** NEXUS 7 **/
+@media (max-width: 601px) {
+  input, button {
+    width: 80vw;
+  }
+}
+
+/** FAIRPHONE 3+ **/
+@media (max-width: 361px) {
+  input, textarea, button {
+    font-size: 0.8rem;
+  }
+}

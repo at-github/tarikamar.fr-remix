@@ -1,6 +1,4 @@
-function Contact(props: {messagePlaceholder: string}) {
-  return <>'WIP contact'</>
-}
+import Contact from '~/components/Contact'
 
 export default function Services(props: { page: string }) {
   return (

@@ -16,6 +16,7 @@ import styles from '~/global.css'
 import stylesMenu from '~/components/Menu/Menu.css'
 import stylesCTA from '~/components/CTA/CTA.css'
 import stylesFooter from '~/components/Footer/Footer.css'
+import stylesContact from '~/components/Contact/Contact.css'
 
 export function links() {
   return [
@@ -23,6 +24,7 @@ export function links() {
     , { rel: 'stylesheet', href: stylesMenu }
     , { rel: 'stylesheet', href: stylesCTA }
     , { rel: 'stylesheet', href: stylesFooter }
+    , { rel: 'stylesheet', href: stylesContact }
   ]
 }
 
