@@ -1,12 +1,16 @@
 import Contact from '~/components/Contact'
 
-export default function Services(props: { page: string }) {
+export default function Services(props: {
+  page: { content: { rendered: string } }
+}) {
+  const page = props.page.content.rendered
+
   return (
     <div className="content services">
       <div
         className="editorial"
         dangerouslySetInnerHTML={{
-          __html: props.page
+          __html: page
         }}
       />
       <div className="big-row contact">

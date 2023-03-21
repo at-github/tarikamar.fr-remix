@@ -1,9 +1,8 @@
 import { useLoaderData } from 'react-router'
 import Services from '~/features/services'
-import myFetch from '~/utils/myFetch'
 import type { ActionArgs, MetaFunction } from '@remix-run/node'
 import build from '~/utils/buildMeta'
-import { postContact } from '~/utils/api'
+import { get, postContact } from '~/utils/api'
 
 import styles from '~/features/services/Services.css'
 
@@ -30,7 +29,7 @@ interface APIServicesResponse {
 }
 
 export async function loader() {
-  const page = await myFetch('/wp/v2/pages/5')
+  const page = await get('/wp/v2/pages/5')
   const domain = process.env.REACT_APP_DOMAIN
 
   return {
@@ -42,9 +41,7 @@ export async function loader() {
 export default function Index() {
   const {page} = useLoaderData() as {page: APIServicesResponse}
 
-  return (
-    <Services page={ page.content.rendered }/>
-  )
+  return (<Services page={ page }/>)
 }
 
 export async function action({request}: ActionArgs) {
