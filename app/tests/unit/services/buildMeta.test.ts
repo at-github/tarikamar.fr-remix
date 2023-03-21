@@ -44,7 +44,7 @@ test('Dynamic meta data', () => {
     }
   )
 
-  const title       = 'Custom title'
+  const title       = 'Custom title | site web de Tarik'
   const description = 'Another description'
   const image       = 'https://domain.com/images/article.jpg'
 
