@@ -2,12 +2,10 @@ import Contact from '../../components/Contact'
 
 export default function BlogContainer(props: {
   children: JSX.Element
+  , contactSubject: string
 }) {
   return (
     <div className="content blog">
-      <header>
-        <h1>Blog</h1>
-      </header>
       {props.children}
       <div className="big-row contact">
         <div>

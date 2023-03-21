@@ -21,7 +21,7 @@ export default function Posts(props: {posts: PostInterface[]}) {
         >
           <Link
             className="read-more"
-            to={`/blog/${post.slug}`}
+            to={`/articles/${post.slug}`}
           >…</Link>
         </Post>
       })}

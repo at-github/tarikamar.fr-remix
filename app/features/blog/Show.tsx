@@ -1,15 +1,19 @@
-import {Link, LoaderFunctionArgs, useLoaderData} from 'react-router-dom'
-import BackIcon from '../../components/Icons/BackIcon'
-import {get} from '../../services/api'
+import type { LoaderFunctionArgs } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import BackIcon from '~/components/Icons/BackIcon'
+import {get} from '~/utils/api'
 import BlogContainer from './BlogContainer'
-import Post, {PostInterface} from './Post'
+import type {PostInterface} from './Post';
+import Post from './Post'
 
 export function getPost({params}: LoaderFunctionArgs) {
   return get(`/custom/v0/posts/${params.slug}`)
 }
 
-export default function ShowPost() {
-  const post             = useLoaderData() as PostInterface
+export default function ShowPost(props: {
+  post: PostInterface
+}) {
+  const { post }         = props
   const title            = post.title.rendered
   const content          = post.content.rendered
   const featuredMediaUrl = post.featured_media_url
