@@ -1,8 +1,9 @@
 import { useLoaderData } from 'react-router'
 import Services from '~/features/services'
 import myFetch from '~/utils/myFetch'
-import type { MetaFunction } from '@remix-run/node'
+import type { ActionArgs, MetaFunction } from '@remix-run/node'
 import build from '~/utils/buildMeta'
+import { postContact } from '~/utils/api'
 
 import styles from '~/features/services/Services.css'
 
@@ -41,8 +42,11 @@ export async function loader() {
 export default function Index() {
   const {page} = useLoaderData() as {page: APIServicesResponse}
 
-  // TODO create utils to extract from wp api response
   return (
     <Services page={ page.content.rendered }/>
   )
+}
+
+export async function action({request}: ActionArgs) {
+  return postContact(await request.formData())
 }

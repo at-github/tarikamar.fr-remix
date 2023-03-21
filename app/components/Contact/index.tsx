@@ -3,7 +3,10 @@ import React, {useState} from 'react'
 import Thanking from './Thanking'
 import {useActionData} from 'react-router-dom'
 
-export default function Contact(props: {messagePlaceholder?: string}) {
+export default function Contact(props: {
+  messagePlaceholder?: string
+  subject?: string
+}) {
   const {messagePlaceholder} = props
 
   const postContactResponse = useActionData() as {
@@ -29,7 +32,7 @@ export default function Contact(props: {messagePlaceholder?: string}) {
   if (postContactResponse?.status === 'mail_sent')
     return <Thanking />
 
-  postContactResponse?.invalid_fields.forEach((field: any) => {
+  postContactResponse?.invalid_fields?.forEach((field: any) => {
     if (field.field === 'your-email')
       errorsFromApi.email = true
 
@@ -78,7 +81,8 @@ export default function Contact(props: {messagePlaceholder?: string}) {
   return <ContactForm
     {
       ...{
-        email
+        subject: props.subject
+        , email
         , message
         , errorsFromApi
         , handleChangeEmail

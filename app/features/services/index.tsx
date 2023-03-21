@@ -14,6 +14,7 @@ export default function Services(props: { page: string }) {
           <h1>Intéressé ?</h1>
           <Contact
             messagePlaceholder="Donnez moi une idée de l’aide dont vous avez besoin"
+            subject="À propos de vos services"
           />
         </div>
       </div>

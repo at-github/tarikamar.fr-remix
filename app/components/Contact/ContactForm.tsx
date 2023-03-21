@@ -4,7 +4,8 @@ import {Form} from 'react-router-dom'
 import {buildInputStatusClass} from './contactHelper'
 
 export default function ContactForm(props: {
-  email: {edited: boolean, valid: boolean}
+  subject?: string
+  , email: {edited: boolean, valid: boolean}
   , message: {edited: boolean, valid: boolean}
   , errorsFromApi: {email: boolean, message: boolean}
   , handleChangeEmail: React.ChangeEventHandler<HTMLInputElement>
@@ -26,6 +27,8 @@ export default function ContactForm(props: {
 
   return (
     <Form method="post" id="contact">
+      <input type="hidden" name="your-subject" value={props.subject} />
+
       <div className={
         buildInputStatusClass('form-row', email, errorsFromApi.email)
       }>
