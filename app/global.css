@@ -153,6 +153,15 @@ button:disabled,
   height: 100%;
 }
 
+/** THANKING **/
+.thanking {
+  text-align: center;
+}
+
+.thanking h3 {
+  font-size: 6vw;
+}
+
 @media (min-width: 1024px) {
   h1 {
     font-size: 6rem;

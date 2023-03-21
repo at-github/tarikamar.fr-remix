@@ -1,7 +1,3 @@
-import './Blog.css'
-import { postContactWithSubject } from '~/utils/postContactWithSubject'
-import type { ActionFunctionArgs } from 'react-router-dom'
-
 export interface PostInterface {
   id: number
   , content: {
@@ -13,17 +9,6 @@ export interface PostInterface {
   , featured_media_url: string
   , excerpt_read_more: string
   , slug: string
-}
-
-export async function postContactFromPostAction(
-  {request}: ActionFunctionArgs
-) {
-  const [, slug] = window.location.href.split('.fr')
-
-  return postContactWithSubject(
-    await request.formData(),
-    `À propos de l’article : ${slug}`
-  )
 }
 
 function FeaturedImage(props: {src: string, alt: string}) {

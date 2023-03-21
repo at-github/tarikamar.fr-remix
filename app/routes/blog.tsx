@@ -1,8 +1,8 @@
 import { useLoaderData } from '@remix-run/react'
 import Blog from '~/features/blog'
-import { get } from '~/utils/api'
+import { get, postContact } from '~/utils/api'
 import type { PostInterface } from '~/features/blog/Post'
-import type { MetaFunction } from '@remix-run/node'
+import type { ActionArgs, MetaFunction } from '@remix-run/node'
 import build from '~/utils/buildMeta'
 
 import styles from '~/features/blog/Blog.css'
@@ -32,6 +32,10 @@ export async function loader() {
     posts
     , metadata: { domain }
   }
+}
+
+export async function action({request}: ActionArgs) {
+  return postContact(await request.formData())
 }
 
 export default function Index() {

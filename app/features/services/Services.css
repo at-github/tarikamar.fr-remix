@@ -71,15 +71,6 @@ h1#title-main span {
   margin-top: 30px;
 }
 
-/** THANKING **/
-.thanking {
-  text-align: center;
-}
-
-.thanking h3 {
-  font-size: 6vw;
-}
-
 /** IPAD AIR portrait **/
 @media (max-width: 768px) {
   .services ul, .services ol {
