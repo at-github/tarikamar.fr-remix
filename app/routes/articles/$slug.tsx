@@ -38,6 +38,10 @@ export const loader = async ({ params }: LoaderArgs) => {
   }
 }
 
+export async function action({request}: ActionArgs) {
+  return postContact(await request.formData())
+}
+
 export default function ArticleSlug() {
   const { post } = useLoaderData() as { post: PostInterface }
 

@@ -15,7 +15,7 @@ export default function BlogContainer(props: {
             Ou vous aimeriez voir un sujet particulier traité ici ?
           </p>
           <h1>Contactez moi</h1>
-          <Contact subject="À propos du blog" />
+          <Contact subject={props.contactSubject}/>
         </div>
       </div>
     </div>

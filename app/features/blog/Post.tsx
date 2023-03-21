@@ -3,9 +3,7 @@ export interface PostInterface {
   , content: {
       rendered: string
     }
-  , title: {
-    rendered: string
-  }
+  , title: string
   , featured_media_url: string
   , excerpt_read_more: string
   , slug: string

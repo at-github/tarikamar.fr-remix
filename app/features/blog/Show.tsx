@@ -14,11 +14,11 @@ export default function ShowPost(props: {
   post: PostInterface
 }) {
   const { post }         = props
-  const title            = post.title.rendered
+  const { title }        = post
   const content          = post.content.rendered
   const featuredMediaUrl = post.featured_media_url
 
-  return <BlogContainer>
+  return <BlogContainer contactSubject={`À propos de : ${title}`}>
     <Post
       title={title}
       content={content}
