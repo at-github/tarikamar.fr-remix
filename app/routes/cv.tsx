@@ -1,7 +1,7 @@
 import { useLoaderData } from '@remix-run/react'
 import CV from '~/features/cv'
-import { get } from '~/utils/api'
-import type { MetaFunction } from '@remix-run/node'
+import { get, postContact } from '~/utils/api'
+import type { ActionArgs, MetaFunction } from '@remix-run/node'
 import build from '~/utils/buildMeta';
 import type { ExperienceAPIInterface } from '~/features/cv/Experience'
 import type { FormationAPIInterface } from '~/features/cv/Formation'
@@ -56,6 +56,10 @@ export async function loader() {
     cv
     , metadata: { domain }
   }
+}
+
+export async function action({request}: ActionArgs) {
+  return postContact(await request.formData())
 }
 
 export default function Index() {

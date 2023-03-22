@@ -189,7 +189,7 @@ export default function CV(props: {
             d'une entreprise contribuant au bien commun
           </p>
           <h1>Contactez moi</h1>
-          <Contact />
+          <Contact subject="À propos du CV"/>
         </div>
       </div>
     </>

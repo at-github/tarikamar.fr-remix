@@ -38,12 +38,12 @@ export async function loader() {
   }
 }
 
+export async function action({request}: ActionArgs) {
+  return postContact(await request.formData())
+}
+
 export default function Index() {
   const {page} = useLoaderData() as {page: APIServicesResponse}
 
   return (<Services page={ page }/>)
-}
-
-export async function action({request}: ActionArgs) {
-  return postContact(await request.formData())
 }
