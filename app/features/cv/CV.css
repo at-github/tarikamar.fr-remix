@@ -1,0 +1,112 @@
+.cv p, h2, h3, h4, ul, li {
+  scroll-snap-align: start;
+}
+
+.cv .read-more {
+  scroll-snap-align: end;
+}
+
+.cv h3 span {
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.collection {
+  position: relative;
+  border-left: 2px solid hsl(0deg, 0%, 85%);
+
+  margin-left: -20px;
+  padding-left: 20px;
+
+  margin-top: -48px;
+  padding-top: 48px;
+}
+
+.collection:before {
+  position: absolute;
+  top: 115px;
+  left: -8px;
+  color: hsl(0deg, 0%, 85%);
+  content: '●';
+}
+
+.collection.first {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.collection.first:before {
+  top: 20px;
+}
+
+/** CONTACT **/
+.contact h1 {
+  margin: 20px 0 0 0;
+}
+
+.contact p {
+  margin: 10px 0;
+}
+
+.contact h3,
+.contact p {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .collection {
+    margin-left: -10px;
+    padding-left: 10px;
+    border-left: 1px solid hsl(0deg, 0%, 85%);
+  }
+
+  .collection:before {
+    font-size: 1rem;
+    top: 10.5vw;
+    left: -6px;
+  }
+
+  .collection.first:before {
+    top: 1vw;
+  }
+}
+
+/** IPAD AIR portrait **/
+@media (max-width: 768px) {
+  .collection:before {
+    top: 85px;
+  }
+}
+
+/** NEXUS 7 **/
+@media (max-width: 601px) {
+  .collection:before {
+    top: 76px;
+  }
+}
+
+@media (max-width: 376px) {
+  ul {
+    padding-left: 25px;
+  }
+
+  ul li {
+    margin-bottom: 5px;
+  }
+}
+
+/** FAIRPHONE 3+ **/
+@media (max-width: 361px) {
+  ul {
+    padding-left: 15px;
+  }
+
+  .contact p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .contact h3 {
+    margin: 5px 0;
+  }
+}

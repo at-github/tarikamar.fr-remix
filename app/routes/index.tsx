@@ -17,7 +17,7 @@ export const meta: MetaFunction = fromLoader =>  {
   const {data} = fromLoader
 
   return build(
-    {domain: data.metadata.domain, path: fromLoader.location.pathname},
+    { domain: data.metadata.domain, path: fromLoader.location.pathname },
     { title: data.page.title.rendered }
   )
 }

@@ -153,6 +153,29 @@ button:disabled,
   height: 100%;
 }
 
+.read-more,
+.back {
+  background: white;
+  color: black;
+  box-shadow: none;
+  border-radius: 30px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 30px;
+  border: none;
+}
+
+.read-more:hover,
+.back:hover {
+  margin-bottom: 28px;
+}
+
+.back svg {
+  width: 20px;
+}
+
+
 /** THANKING **/
 .thanking {
   text-align: center;
