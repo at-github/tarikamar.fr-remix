@@ -6,9 +6,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useCatch,
 } from '@remix-run/react'
 import Menu from '~/components/Menu'
 import Footer from '~/components/Footer'
+import Error from '~/features/error'
 import {useRef} from 'react'
 import useIntersectionObserver from '~/hooks/useIntersectionObserver'
 
@@ -34,7 +36,9 @@ export const meta: MetaFunction = () => ({
   , viewport: 'width=device-width,initial-scale=1'
 })
 
-export default function App() {
+function Document(props: {
+  children: JSX.Element
+}) {
   const ref = useRef<HTMLDivElement | null>(null)
   const entry = useIntersectionObserver(ref, {})
   let menuVisible = true
@@ -51,7 +55,7 @@ export default function App() {
       <body>
         <div id="container">
           <Menu ref={ref}/>
-          <Outlet />
+          {props.children}
           <Footer scrollTopVisible={!menuVisible}/>
         </div>
 
@@ -61,4 +65,21 @@ export default function App() {
       </body>
     </html>
   )
+}
+
+export default function App() {
+  return <Document>
+    <Outlet />
+  </Document>
+}
+
+export function CatchBoundary() {
+  const caught = useCatch()
+
+  // eslint-disable-next-line no-console
+  console.warn(caught)
+
+  return <Document>
+    <Error status={caught.status} />
+  </Document>
 }
