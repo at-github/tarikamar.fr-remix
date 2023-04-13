@@ -20,7 +20,7 @@ export default function build (
   const {
     title
     , description = 'Mes services numériques à votre disposition'
-    , image = `${domain}/img/logo512.png`
+    , image = `${domain}/img/logo-1200x628.png`
   } = meta || {}
 
   const compoundTitle = buildTitle(title)
