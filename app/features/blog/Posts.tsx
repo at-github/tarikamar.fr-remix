@@ -16,7 +16,6 @@ export default function Posts(props: {posts: PostInterface[]}) {
         return <Post
           title={post.title.rendered}
           content={post.excerpt_read_more}
-          featuredMediaUrl={post.featured_media_url}
           key={post.id}
         >
           <Link
