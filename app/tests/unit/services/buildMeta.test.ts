@@ -10,7 +10,7 @@ test('Default meta data', () => {
 
   const title       = 'Site web de Tarik Amar'
   const description = 'Mes services numériques à votre disposition'
-  const image       = 'http://do.main/img/logo512.png'
+  const image       = 'http://do.main/img/logo-1200x628.png'
 
   expect(meta.title).toBe(title)
   expect(meta.description).toBe(description)
