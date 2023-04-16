@@ -15,6 +15,7 @@ export function links() {
 
 export const meta: MetaFunction = fromLoader =>  {
   const {data} = fromLoader
+  const image = data.post.featured_media_url || undefined
 
   return build(
     {domain: data?.metadata.domain, path: fromLoader.location.pathname},
@@ -22,6 +23,7 @@ export const meta: MetaFunction = fromLoader =>  {
       title: data ? data.post.title : 'Article introuvable'
       , description: `Les articles, partages, réflexions
 & les projets du citoyen engagé, consom’acteur & développeur web : Tarik Amar.`
+      , image
     }
   )
 }
