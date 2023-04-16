@@ -1,5 +1,5 @@
 import type { ActionArgs, LoaderArgs, MetaFunction } from '@remix-run/node'
-import { useCatch, useLoaderData, useParams } from '@remix-run/react'
+import { useCatch, useLoaderData } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 import type { PostInterface } from '~/features/blog/Post'
 import ShowPost from '~/features/blog/Show'
@@ -14,15 +14,17 @@ export function links() {
 }
 
 export const meta: MetaFunction = fromLoader =>  {
-  const {data} = fromLoader
-  const image = data.post.featured_media_url || undefined
+  const {data}      = fromLoader
+  const image       = data.post.featured_media_url || undefined
+  const description = data.post.excerpt || `Les articles, partages, réflexions
+& les projets du citoyen engagé, consom’acteur & développeur web : Tarik Amar.`
+
 
   return build(
     {domain: data?.metadata.domain, path: fromLoader.location.pathname},
     {
       title: data ? data.post.title : 'Article introuvable'
-      , description: `Les articles, partages, réflexions
-& les projets du citoyen engagé, consom’acteur & développeur web : Tarik Amar.`
+      , description
       , image
     }
   )
