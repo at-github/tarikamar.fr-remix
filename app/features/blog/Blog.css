@@ -6,28 +6,6 @@ footer {
   text-align: center;
 }
 
-.featured-image {
-  border: 1px solid gray;
-  width: 400px;
-  height: 500px;
-  margin: 10px 0 25px 25px;
-  float: right;
-  overflow: hidden;
-}
-
-.featured-image img {
-  width: 400px;
-}
-
-figure {
-  margin: 0;
-}
-
-figure img {
-  width: 100%;
-  height: auto;
-}
-
 figcaption {
   background: hsl(0deg 0% 90%);
   font-size: 14px;

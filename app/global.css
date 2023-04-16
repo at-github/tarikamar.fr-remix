@@ -90,6 +90,10 @@ h3 {
   text-align: center;
 }
 
+blockquote {
+  font-style: italic;
+}
+
 .big-row {
   min-height: 100vh;
   max-width: 90vw;
@@ -179,6 +183,33 @@ button:disabled,
   width: 20px;
 }
 
+/** WORDPRESS COLUMNS **/
+.wp-block-columns {
+  display: flex;
+  column-gap: 50px;
+  padding: 0;
+}
+
+.wp-block-column {
+  flex: 1;
+}
+
+/** WORDPRESS ALIGNMENTS **/
+.alignright {
+  float: right;
+  margin-left: 20px;
+}
+
+/** WORDPRESS IMAGES **/
+
+figure {
+  margin: 0;
+}
+
+figure:not(.is-resized) img {
+  width: 100%;
+  height: auto;
+}
 
 /** THANKING **/
 .thanking {
@@ -275,6 +306,10 @@ button:disabled,
   .wp-block-column > * {
     flex: 1;
   }
+
+  figure {
+    margin: 10px 0;
+  }
 }
 
 /** NEXUS 7 **/
@@ -298,6 +333,18 @@ button:disabled,
 
   .wp-block-columns.question-answer .wp-block-column:last-child {
     text-align: right;
+  }
+
+  /** WORDPRESS ALIGNMENTS **/
+  .alignright {
+    float: none;
+    margin: 10px 20px;
+  }
+
+  /** WORDPRESS IMAGES **/
+  .is-resized img {
+    width: 100%;
+    height: auto;
   }
 }
 
