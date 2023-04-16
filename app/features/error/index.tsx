@@ -35,7 +35,7 @@ export default function Error(props: {
         </h3>
         <p className="text-center">
           <small>
-            C'est certainement mon chat a pris le contrôle de l'ordi
+            C'est certainement mon chat qui a pris le contrôle de l'ordi
           </small>
         </p>
       </>
