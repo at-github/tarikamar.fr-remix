@@ -22,6 +22,11 @@
   padding-top: 48px;
 }
 
+.Accordion .collection:nth-child(2) {
+  margin-top: inherit;
+  padding-top: inherit;
+}
+
 .collection:before {
   position: absolute;
   top: 115px;
