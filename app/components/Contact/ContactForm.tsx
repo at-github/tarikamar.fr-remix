@@ -28,6 +28,7 @@ export default function ContactForm(props: {
   return (
     <Form method="post" id="contact">
       <input type="hidden" name="your-subject" value={props.subject} />
+      <input type="hidden" name="_wpcf7_unit_tag" value="no empty" />
 
       <div className={
         buildInputStatusClass('form-row', email, errorsFromApi.email)
