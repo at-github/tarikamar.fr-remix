@@ -26,6 +26,56 @@ h1#title-main span {
   text-align: center;
 }
 
+/** MAIN TITLE with multi**/
+.with-multi {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-gap: 1rem;
+
+  font-size: 1rem;
+  text-transform: none;
+}
+
+#developper-title {
+  text-align: right;
+}
+
+#developper-title > * {
+  display: block;
+}
+
+.with-multi #developper {
+  font-size: 4rem;
+  margin-bottom: -1rem;
+}
+
+.with-multi #for-good {
+  font-size: 6.5rem;
+  margin-bottom: -2rem;
+}
+
+.with-multi #common {
+  font-size: 5rem;
+}
+
+.with-multi #at-multi {
+  font-size: 5rem;
+  text-align: left;
+}
+
+.with-multi #at-multi > * {
+  display: block;
+}
+
+.with-multi #at {
+  margin-bottom: -5.25rem;
+}
+
+.with-multi #multi {
+  font-size: 14rem;
+}
+
 /** SOLUTIONS **/
 .solutions .solution {
   background-repeat: no-repeat;
