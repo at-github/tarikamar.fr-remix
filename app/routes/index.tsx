@@ -29,7 +29,7 @@ interface APIServicesResponse {
 }
 
 export async function loader() {
-  const page = await get('/wp/v2/pages/5')
+  const page = await get('/wp/v2/pages/404')
   const domain = process.env.REACT_APP_DOMAIN
 
   return {
