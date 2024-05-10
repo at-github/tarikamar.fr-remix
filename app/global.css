@@ -11,9 +11,11 @@ code {
     monospace;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+@media (min-width: 601px) {
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
 }
 
 html, body {
@@ -99,7 +101,12 @@ blockquote {
   max-width: 90vw;
   display: flex;
   align-items: flex-start;
-  scroll-snap-align: start;
+}
+
+@media (min-width: 601px) {
+  .big-row {
+    scroll-snap-align: start;
+  }
 }
 
 .big-row > * {

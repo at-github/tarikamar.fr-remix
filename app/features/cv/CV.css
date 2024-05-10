@@ -1,9 +1,11 @@
-.cv p, h2, h3, h4, ul, li {
-  scroll-snap-align: start;
-}
+@media (min-width: 601px) {
+  .cv p, h2, h3, h4, ul, li {
+    scroll-snap-align: start;
+  }
 
-.cv .read-more {
-  scroll-snap-align: end;
+  .cv .read-more {
+    scroll-snap-align: end;
+  }
 }
 
 .cv h3 span {

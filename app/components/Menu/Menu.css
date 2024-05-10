@@ -1,6 +1,11 @@
 #menu {
-  scroll-snap-align: start;
   margin: 60px 0;
+}
+
+@media (min-width: 601px) {
+  #menu {
+    scroll-snap-align: start;
+  }
 }
 
 #menu ul {

@@ -1,5 +1,7 @@
-.blog p, .blog ul, .blog ol, .featured-image, figure, h3 {
-  scroll-snap-align: start;
+@media (min-width: 601px) {
+  .blog p, .blog ul, .blog ol, .featured-image, figure, h3 {
+    scroll-snap-align: start;
+  }
 }
 
 footer {
