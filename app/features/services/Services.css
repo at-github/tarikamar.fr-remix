@@ -76,6 +76,47 @@ h1#title-main span {
   font-size: 14rem;
 }
 
+@media (max-width: 1100px) {
+  .with-multi {
+    display: block;
+  }
+
+  .with-multi #developper-title {
+    text-align: center;
+  }
+
+  .with-multi #at-multi {
+    text-align: center;
+  }
+
+  .with-multi #at {
+    margin-bottom: -4rem;
+  }
+}
+
+@media (max-width: 601px) {
+  .with-multi #developper {
+    font-size: 16vw;
+  }
+
+  .with-multi #for-good {
+    font-size: 23vw;
+  }
+
+  .with-multi #common {
+    font-size: 19vw;
+  }
+
+  .with-multi #at {
+    font-size: 27vw;
+    margin-bottom: -3rem;
+  }
+
+  .with-multi #multi {
+    font-size: 36vw;
+  }
+}
+
 /** SOLUTIONS **/
 .solutions .solution {
   background-repeat: no-repeat;
